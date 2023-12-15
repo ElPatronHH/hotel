@@ -32,7 +32,7 @@ python manage.py runserver
 >> Superusuarios:
 python manage.py createsuperuser
 python manage.py changepassword Hotel<nombre_de_usuario>
-python manage.py shell (abre la consola de Django y luego se debe pegar el code para listar usuarios)
+python manage.py shell (para ver los users existentes abre la consola de Django y luego se debe pegar a continuación el code para listar usuarios: )
 from django.contrib.auth.models import User 
 superusers = User.objects.filter(is_superuser=True)
 for superuser in superusers:
@@ -41,6 +41,7 @@ for superuser in superusers:
 >> Correr el Proyecto en Server Local (debes estar en la misma red):
 En settings busca y coloca ALLOWED_HOSTS = ['*']
 python manage.py runserver 0.0.0.0:8000
+Obtén tu ip desde cmd con el comando ipconfig y ábrela en tu navegador acompañado de :8000/hotel_app/crear_reserva/
 
 >> Migraciones:
 python manage.py makemigrations
@@ -48,6 +49,6 @@ python manage.py makemigrations
 	Please select a fix:
  	1) Provide a one-off default now (will be set on all existing rows with a null value for this column)
  	2) Quit and manually define a default value in models.py.
-    Elegimos opción 2 y revisamos manualmente los modelos, deben de tener un campo por default porque
+    -> Elegimos opción 2 y revisamos manualmente los modelos, deben de tener un campo por default porque
 	el error dice que ya hay registros sin ese campo y van a tener nulo, entonces debes colocar un 	default.
 python manage.py migrate
