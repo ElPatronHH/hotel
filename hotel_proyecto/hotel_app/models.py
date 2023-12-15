@@ -14,6 +14,7 @@ class Habitacion(models.Model):
     numero = models.CharField(max_length=10)
     costo = models.DecimalField(max_digits=10, decimal_places=2)
     tipo = models.ForeignKey(TipoHabitacion, on_delete=models.CASCADE)
+    ocupada = models.BooleanField(default=False)
 
     def __str__(self):
         return f'Habitación {self.numero} - {self.tipo}'

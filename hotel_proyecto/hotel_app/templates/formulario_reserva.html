@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hotel GRAND ROYALE - Formulario de Reserva</title>
+    <title>Hotel Grand Royale</title>
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <style>
         body {
@@ -64,9 +64,19 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script>
         $(document).ready(function () {
-            // Eliminado el script de inicialización de datepicker para evitar conflictos
-            // $('#id_fecha_llegada').datepicker();
-            // $('#id_fecha_salida').datepicker();
+            var fechaActual = new Date();
+            fechaActual.setHours(0,0,0,0); // Resetear la hora a medianoche para comparar solo fechas
+    
+            // Configuración para la fecha de llegada
+            $('#id_fecha_llegada').attr('type', 'date').attr('min', fechaActual.toISOString().split('T')[0]);
+    
+            // Configuración para la fecha de salida
+            $('#id_fecha_salida').attr('type', 'date').attr('min', fechaActual.toISOString().split('T')[0]);
+    
+            $('#id_fecha_llegada').change(function() {
+                var fechaLlegada = new Date($(this).val());
+                $('#id_fecha_salida').attr('min', fechaLlegada.toISOString().split('T')[0]);
+            });
         });
     </script>
 </head>
@@ -76,10 +86,6 @@
         <h1>Formulario de Reserva</h1>
         <form method="post" action="">
             {% csrf_token %}
-            <div class="form-group">
-                <label for="{{ form.habitacion.id_for_label }}">Habitación:</label>
-                {{ form.habitacion }}
-            </div>
             <div class="form-group">
                 <label for="{{ form.huesped.id_for_label }}">Nombre del huésped:</label>
                 {{ form.huesped }}
@@ -100,9 +106,9 @@
                 <label for="{{ form.tipo_habitacion.id_for_label }}">Tipo de habitación:</label>
                 {{ form.tipo_habitacion }}
             </div>
-            <!-- Puedes agregar más campos según sea necesario -->
+            <!-- Botón para enviar el formulario -->
             <button type="submit">Guardar Reserva</button>
         </form>
     </div>
 </body>
-</html>
+</html> 
