@@ -18,7 +18,6 @@
             justify-content: center;
             background-image: url('https://royalholiday.travel/wp-content/uploads/2021/05/1-playas-de-Cancun.jpg');
         }
-
         header {
             background-color: #007BFF;
             color: #fff;
@@ -28,7 +27,6 @@
             font-weight: bold;
             width: 100%;
         }
-
         .card {
             background: rgba(255, 255, 255, 0.8);
             border-radius: 10px;
@@ -36,28 +34,23 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             width: 300px;
         }
-
         h1 {
             text-align: center;
             color: #333;
             font-size: 24px;
         }
-
         form {
             display: flex;
             flex-direction: column;
         }
-
         .form-group {
             margin-bottom: 15px;
         }
-
         input, select {
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 5px;
         }
-
         button {
             background-color: #007BFF;
             color: #fff;
@@ -83,42 +76,33 @@
         <h1>Formulario de Reserva</h1>
         <form method="post" action="">
             {% csrf_token %}
-        
             <div class="form-group">
                 <label for="{{ form.habitacion.id_for_label }}">Habitación:</label>
                 {{ form.habitacion }}
             </div>
-        
             <div class="form-group">
                 <label for="{{ form.huesped.id_for_label }}">Nombre del huésped:</label>
                 {{ form.huesped }}
             </div>
-        
             <div class="form-group">
                 <label for="{{ form.fecha_llegada.id_for_label }}">Fecha de llegada:</label>
                 {{ form.fecha_llegada }}
             </div>
-        
             <div class="form-group">
                 <label for="{{ form.fecha_salida.id_for_label }}">Fecha de salida:</label>
                 {{ form.fecha_salida }}
             </div>
-        
             <div class="form-group">
                 <label for="{{ form.tipo_pago.id_for_label }}">Tipo de pago:</label>
                 {{ form.tipo_pago }}
             </div>
-        
             <div class="form-group">
                 <label for="{{ form.tipo_habitacion.id_for_label }}">Tipo de habitación:</label>
                 {{ form.tipo_habitacion }}
             </div>
-        
             <!-- Puedes agregar más campos según sea necesario -->
-        
             <button type="submit">Guardar Reserva</button>
         </form>
-        
     </div>
 </body>
 </html>
