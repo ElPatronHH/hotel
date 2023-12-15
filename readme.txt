@@ -1,6 +1,6 @@
 >> Sugerencias:
 Instalar DBeaver y MySQL Workbench, ahí se puede ver e insertar muy fácil en la base de datos respectivamente.
-NO USAR python manage.py makemigrations y python manage.py migrate sin avisar, esto modifica la base de datos, y está bien, pero implica que todos debemos tener el mismo archivo de models, así que nos lo debemos de estar pasando y si perdemos el rastro del estado actual, ya valió, primero me avisan a mí (Alex), yo reviso su cambio rápido, lo subo y lo vuelven a descargar para que todos vayamos a la par.
+NO USAR python manage.py makemigrations y python manage.py migrate sin avisar, esto modifica la base de datos, y está bien, pero implica que todos debemos tener el mismo archivo de models, así que nos lo debemos de estar pasando y si perdemos el rastro del estado actual, ya valió, primero me avisan a mí (Alex), yo reviso su cambio rápido, lo subo y lo vuelven a jalar para que todos vayamos a la par.
 El superusuario se comparte.
 
 >>Entorno Virtual:
