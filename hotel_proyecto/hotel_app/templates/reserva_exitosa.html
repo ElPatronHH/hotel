@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserva Exitosa</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: 'Arial', sans-serif;
+            background-size: cover;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: url('https://royalholiday.travel/wp-content/uploads/2021/05/1-playas-de-Cancun.jpg');
+        }
+
+        h2 {
+            color: #007BFF;
+        }
+
+        p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .summary {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="summary">
+        <h2>¡Reserva Exitosa!</h2>
+        <p>Se ha reservado con éxito la habitación. Aquí está un resumen de la reserva:</p>
+        <p><strong>Habitación:</strong> {{ reserva.habitacion }}</p>
+        <p><strong>Huésped:</strong> {{ reserva.huesped }}</p>
+        <p><strong>Fecha de llegada:</strong> {{ reserva.fecha_llegada }}</p>
+        <p><strong>Fecha de salida:</strong> {{ reserva.fecha_salida }}</p>
+    </div>
+</body>
+</html>

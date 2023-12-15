@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel GRAND ROYALE - Formulario de Reserva</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: 'Arial', sans-serif;
+            background-size: cover;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: url('https://royalholiday.travel/wp-content/uploads/2021/05/1-playas-de-Cancun.jpg');
+        }
+
+        header {
+            background-color: #007BFF;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            font-size: 28px;
+            font-weight: bold;
+            width: 100%;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            font-size: 24px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        input, select {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Eliminado el script de inicialización de datepicker para evitar conflictos
+            // $('#id_fecha_llegada').datepicker();
+            // $('#id_fecha_salida').datepicker();
+        });
+    </script>
+</head>
+<body>
+    <header>HOTEL GRAND ROYALE</header>
+    <div class="card">
+        <h1>Formulario de Reserva</h1>
+        <form method="post" action="">
+            {% csrf_token %}
+        
+            <div class="form-group">
+                <label for="{{ form.habitacion.id_for_label }}">Habitación:</label>
+                {{ form.habitacion }}
+            </div>
+        
+            <div class="form-group">
+                <label for="{{ form.huesped.id_for_label }}">Nombre del huésped:</label>
+                {{ form.huesped }}
+            </div>
+        
+            <div class="form-group">
+                <label for="{{ form.fecha_llegada.id_for_label }}">Fecha de llegada:</label>
+                {{ form.fecha_llegada }}
+            </div>
+        
+            <div class="form-group">
+                <label for="{{ form.fecha_salida.id_for_label }}">Fecha de salida:</label>
+                {{ form.fecha_salida }}
+            </div>
+        
+            <div class="form-group">
+                <label for="{{ form.tipo_pago.id_for_label }}">Tipo de pago:</label>
+                {{ form.tipo_pago }}
+            </div>
+        
+            <div class="form-group">
+                <label for="{{ form.tipo_habitacion.id_for_label }}">Tipo de habitación:</label>
+                {{ form.tipo_habitacion }}
+            </div>
+        
+            <!-- Puedes agregar más campos según sea necesario -->
+        
+            <button type="submit">Guardar Reserva</button>
+        </form>
+        
+    </div>
+</body>
+</html>
